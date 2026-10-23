@@ -4,6 +4,7 @@ SIUE
 Contributors:
 Christopher Edward Bruce
 
+Alexander Felix Kirsten
 
 
 Nessary files:
