@@ -36,7 +36,7 @@ This file tracks individual contributions, time spent, and links to verified rep
 ### 👤 Christopher Edward Bruce
 * **Time Spent:** 5 hours
 * **Tasks Completed:**
-  * Rewrote team Charter
+  * Rewrote Team Charter to add needed information that was missed when first going over the assignment 
   * Added this log recorder
 * **Artifact / Commit Links:**
   * On blackboard
