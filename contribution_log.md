@@ -23,12 +23,12 @@ This file tracks individual contributions, time spent, and links to verified rep
   * [Paste GitHub commit URL or file link here]
 
 ### 👤 Alexander Felix Kirsten
-* **Time Spent:** [e.g., 2 hours]
+* **Time Spent:** 2 hours
 * **Tasks Completed:**
-  * [Task 1]
-  * [Task 2]
+  * Created Github account
+  * Got to know the software
 * **Artifact / Commit Links:**
-  * [Paste GitHub commit URL or file link here]
+  * [none]
 
 ---
 
@@ -50,8 +50,9 @@ This file tracks individual contributions, time spent, and links to verified rep
   * 
 
 ### 👤 Alexander Felix Kirsten
-* **Time Spent:** 
+* **Time Spent:** 3 hours
 * **Tasks Completed:**
-  * 
+  * Task D2
+  * Added branch: Contribution D2 Topic proposal
 * **Artifact / Commit Links:**
-  * 
+  * https://github.com/Forclasses/International-Project-Global-API-/tree/Contribution-D2-topic-proposal
