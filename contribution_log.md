@@ -15,10 +15,10 @@ This file tracks individual contributions, time spent, and links to verified rep
   * https://github.com/users/Forclasses/projects/5
 
 ### 👤 Arif Emre Güzel
-* **Time Spent:** [e.g., 2 hours]
+* **Time Spent:** 2 hours
 * **Tasks Completed:**
-  * [Task 1]
-  * [Task 2]
+  * Setting up Github account
+  * Trying to figure out the github
 * **Artifact / Commit Links:**
   * [Paste GitHub commit URL or file link here]
 
