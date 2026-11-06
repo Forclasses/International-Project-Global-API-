@@ -97,8 +97,8 @@ This file tracks individual contributions, time spent, and links to verified rep
 * **Artifact / Commit Links:**
   * 
   *
-  
-  ### 👤 Arif Emre Güzel
+
+### 👤 Arif Emre Güzel
 * **Time Spent:** 
 * **Tasks Completed:**
   * 
