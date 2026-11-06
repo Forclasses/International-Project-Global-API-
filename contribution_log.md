@@ -87,3 +87,30 @@ This file tracks individual contributions, time spent, and links to verified rep
   *
 
 ---
+
+## Week 4
+### 👤 Christopher Edward Bruce
+* **Time Spent:** 
+* **Tasks Completed:**
+  * 
+  * 
+* **Artifact / Commit Links:**
+  * 
+  *
+  
+  ### 👤 Arif Emre Güzel
+* **Time Spent:** 
+* **Tasks Completed:**
+  * 
+  * 
+* **Artifact / Commit Links:**
+  * [Paste GitHub commit URL or file link here]
+
+### 👤 Alexander Felix Kirsten
+* **Time Spent:** 
+* **Tasks Completed:**
+  * 
+  *
+* **Artifact / Commit Links:**
+  *
+
