@@ -62,10 +62,11 @@ This file tracks individual contributions, time spent, and links to verified rep
 
 ## Week 3
 ### 👤 Christopher Edward Bruce
-* **Time Spent:** 
+* **Time Spent:** 2 hours
 * **Tasks Completed:**
-  * 
-  * 
+  *  Meeting to discuss ideas
+  *  Meeting to discuss json responces
+  *  Note: our contributions seem to be a week ahead compared to D formating no idea why
 * **Artifact / Commit Links:**
   * 
   * 
