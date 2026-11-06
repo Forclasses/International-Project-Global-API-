@@ -62,14 +62,15 @@ This file tracks individual contributions, time spent, and links to verified rep
 
 ## Week 3
 ### 👤 Christopher Edward Bruce
-* **Time Spent:** 2 hours
+* **Time Spent:** 2.5 hours
 * **Tasks Completed:**
   *  Meeting to discuss ideas
   *  Meeting to discuss json responces
+  *  During meeting made a test code for the json
   *  Note: our contributions seem to be a week ahead compared to D formating no idea why
 * **Artifact / Commit Links:**
-  * 
-  * 
+  * https://github.com/Forclasses/International-Project-Global-API-/tree/Testing-weather-API-output
+  * Meeting kinda notes: https://github.com/Forclasses/International-Project-Global-API-/issues/3
 
 ### 👤 Arif Emre Güzel
 * **Time Spent:** 
