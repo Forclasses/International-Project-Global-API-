@@ -1,3 +1,5 @@
+
+#done by Christopher Bruce 11/6/2016
 #getting jason test
 import json
 import requests
