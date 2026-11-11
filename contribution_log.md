@@ -43,11 +43,13 @@ This file tracks individual contributions, time spent, and links to verified rep
   * https://github.com/Forclasses/International-Project-Global-API-/blob/main/contribution_log.md
 
 ### 👤 Arif Emre Güzel
-* **Time Spent:** 
+* **Time Spent:5 hours
 * **Tasks Completed:**
-  * 
+  * Created the documentation
+  * tested APIs
+  * Meeting
 * **Artifact / Commit Links:**
-  * 
+  * On Github --> APIs, their explanations and example outcomes.docx
 
 ### 👤 Alexander Felix Kirsten
 * **Time Spent:** 3 hours
