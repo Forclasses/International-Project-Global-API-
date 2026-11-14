@@ -94,13 +94,13 @@ This file tracks individual contributions, time spent, and links to verified rep
 
 ## Week 4
 ### 👤 Christopher Edward Bruce
-* **Time Spent:** 
+* **Time Spent:** 3 hours
 * **Tasks Completed:**
-  * 
-  * 
+  * Meeting with group 2 times, talking through Design Doc
+  * Redoing Design Document after not liking it
 * **Artifact / Commit Links:**
-  * 
-  *
+  * Did not record meetings
+  * See blackboard for submission
 
 ### 👤 Arif Emre Güzel
 * **Time Spent:** 
