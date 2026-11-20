@@ -83,10 +83,10 @@ This file tracks individual contributions, time spent, and links to verified rep
   * [Paste GitHub commit URL or file link here]
 
 ### 👤 Alexander Felix Kirsten
-* **Time Spent:** 
+* **Time Spent:** 1 hour
 * **Tasks Completed:**
-  * 
-  *
+  *  Meeting to discuss ideas
+  *  Meeting to discuss json responces
 * **Artifact / Commit Links:**
   *
 
@@ -111,10 +111,36 @@ This file tracks individual contributions, time spent, and links to verified rep
   * [Paste GitHub commit URL or file link here]
 
 ### 👤 Alexander Felix Kirsten
+* **Time Spent:** 2 hours
+* **Tasks Completed:**
+  * assigning D4 tasks to group members
+  * Group meeting
+* **Artifact / Commit Links:**
+  *
+
+---
+
+## Week 5
+### 👤 Christopher Edward Bruce
+  *
+  *
+* **Artifact / Commit Links:**
+  * 
+  *
+
+### 👤 Arif Emre Güzel
 * **Time Spent:** 
 * **Tasks Completed:**
   * 
-  *
+  * 
 * **Artifact / Commit Links:**
-  *
+  * [Paste GitHub commit URL or file link here]
+
+### 👤 Alexander Felix Kirsten
+* **Time Spent:** 3 hours
+* **Tasks Completed:**
+  * Completed D4 Weather and location Module
+  * Meeting with group 
+* **Artifact / Commit Links:**
+  * https://github.com/Forclasses/International-Project-Global-API-/blob/Testing-weather-API-output/scriptweatherlocationalex.py
 
