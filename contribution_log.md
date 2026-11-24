@@ -122,11 +122,13 @@ This file tracks individual contributions, time spent, and links to verified rep
 
 ## Week 5
 ### 👤 Christopher Edward Bruce
-  *
-  *
+* **Time Spent:** 3 hours
+* **Tasks Completed:**
+  * Meeting with group
+  * Prelimary Main made
 * **Artifact / Commit Links:**
-  * 
-  *
+  * https://github.com/Forclasses/International-Project-Global-API-/blob/main/main.py
+
 
 ### 👤 Arif Emre Güzel
 * **Time Spent:** 
@@ -143,4 +145,33 @@ This file tracks individual contributions, time spent, and links to verified rep
   * Meeting with group 
 * **Artifact / Commit Links:**
   * https://github.com/Forclasses/International-Project-Global-API-/blob/Testing-weather-API-output/scriptweatherlocationalex.py
+
+---
+
+## Week 6
+### 👤 Christopher Edward Bruce
+* **Time Spent:** 
+* **Tasks Completed:**
+  * 
+  * 
+* **Artifact / Commit Links:**
+  * [Paste GitHub commit URL or file link here]
+
+
+### 👤 Arif Emre Güzel
+* **Time Spent:** 
+* **Tasks Completed:**
+  * 
+  * 
+* **Artifact / Commit Links:**
+  * [Paste GitHub commit URL or file link here]
+
+### 👤 Alexander Felix Kirsten
+* **Time Spent:** 3 hours
+* **Tasks Completed:**
+  * 
+  * 
+* **Artifact / Commit Links:**
+  * 
+
 
