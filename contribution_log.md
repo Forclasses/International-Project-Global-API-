@@ -150,12 +150,13 @@ This file tracks individual contributions, time spent, and links to verified rep
 
 ## Week 6
 ### 👤 Christopher Edward Bruce
-* **Time Spent:** 
+* **Time Spent:** 4 hours so far
 * **Tasks Completed:**
-  * 
+  * Created a preliminary push that combines the group's efforts so far 
   * 
 * **Artifact / Commit Links:**
-  * [Paste GitHub commit URL or file link here]
+  * https://github.com/Forclasses/International-Project-Global-API-/tree/Prelimarypush
+  * 
 
 
 ### 👤 Arif Emre Güzel
