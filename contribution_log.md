@@ -170,9 +170,9 @@ This file tracks individual contributions, time spent, and links to verified rep
 ### 👤 Alexander Felix Kirsten
 * **Time Spent:** 3 hours
 * **Tasks Completed:**
-  * 
+  * Reworked the API's output
   * 
 * **Artifact / Commit Links:**
-  * 
+  * https://github.com/Forclasses/International-Project-Global-API-/blob/Testing-weather-API-output/scriptweatherlocationalex(updated.26.11).py
 
 
