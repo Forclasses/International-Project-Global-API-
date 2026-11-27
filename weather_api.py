@@ -106,8 +106,8 @@ def get_weather(latitude, longitude):
     params = {
         "latitude": latitude,
         "longitude": longitude,
-        "hourly": "temperature_2m,precipitation_probability,wind_speed_10m",
-        "timezone": "Europe/Berlin",
+        "hourly": "temperature_2m,precipitation_probability,precipitation,rain,showers,snowfall,wind_speed_10m",
+        "timezone": "auto",
         "forecast_days": 1,
     }
 
@@ -136,28 +136,64 @@ def process_weather_data(data, city=None):
 
     try:
         hourly = data["hourly"]
+        units = dict(data.get("hourly_units", {}))
+        timezone_str = data.get("timezone", "")
+        is_america = timezone_str.startswith("America/")
+
+        if is_america:
+            units["temperature_2m"] = "°F"
+
         times = hourly["time"]
         temperatures = hourly["temperature_2m"]
-        precipitation = hourly["precipitation_probability"]
+        precipitation_probs = hourly["precipitation_probability"]
+        precipitations = hourly["precipitation"]
+        rains = hourly["rain"]
+        showers = hourly["showers"]
+        snowfalls = hourly["snowfall"]
         wind_speeds = hourly["wind_speed_10m"]
 
         forecast_list = []
-        for time_str, temp, precip, wind in zip(
-            times, temperatures, precipitation, wind_speeds
+        for (
+            time_str,
+            temp,
+            precip_prob,
+            precip,
+            rain,
+            shower,
+            snow,
+            wind,
+        ) in zip(
+            times,
+            temperatures,
+            precipitation_probs,
+            precipitations,
+            rains,
+            showers,
+            snowfalls,
+            wind_speeds,
         ):
+            if is_america and temp is not None:
+                temp_value = round((temp * 9 / 5) + 32, 1)
+            else:
+                temp_value = temp
+
             forecast_list.append({
                 "time": time_str,
-                "temperature_2m": temp,
-                "precipitation_probability": precip,
-                "wind_speed_10m": wind,
+                "temperature_2m": f"{temp_value} {units.get('temperature_2m', '')}".strip(),
+                "precipitation_probability": f"{precip_prob} {units.get('precipitation_probability', '')}".strip(),
+                "precipitation": f"{precip} {units.get('precipitation', '')}".strip(),
+                "rain": f"{rain} {units.get('rain', '')}".strip(),
+                "showers": f"{shower} {units.get('showers', '')}".strip(),
+                "snowfall": f"{snow} {units.get('snowfall', '')}".strip(),
+                "wind_speed_10m": f"{wind} {units.get('wind_speed_10m', '')}".strip(),
             })
 
         weather_data = {
             "latitude": data.get("latitude"),
             "longitude": data.get("longitude"),
             "city": city,
-            "timezone": data.get("timezone"),
-            "units": data.get("hourly_units", {}),
+            "timezone": timezone_str,
+            "units": units,
             "forecast": forecast_list,
         }
         return weather_data

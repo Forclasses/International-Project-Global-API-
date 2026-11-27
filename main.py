@@ -16,13 +16,15 @@ import requests
 import os
 import json
 import time
+from datetime import datetime
+from zoneinfo import ZoneInfo
 from weather_api import (
     search_location,
     get_coordinates,
     get_weather,
     process_weather_data
 )
-from weather_display import display_forecast
+from weather_display import display_forecast, convert_temperature
 from recommendation import recommend_activity, recommend_clothing
 
 
@@ -58,8 +60,11 @@ def display_results(data):
     print("\n================ WetterPlan Summary ================")
     print(f"City: {data['city']} ({data['latitude']}, {data['longitude']})")
     print(f"Timezone: {data['timezone']}")
-    print(f"Current Temp: {summary['temperature']}°{unit}")
+    print(f"Forecast Time: {summary['time'].replace('T', ' ')}")
+    print(f"Temperature: {summary['temperature']}°{unit}")
     print(f"Precipitation Prob: {summary['precipitation_probability']}%")
+    print(f"Total Precipitation: {summary['precipitation']}")
+    print(f"Rain: {summary['rain']} | Showers: {summary['showers']} | Snowfall: {summary['snowfall']}")
     print(f"Wind Speed: {summary['wind_speed']} km/h")
     print(f"Recommended Activities: {', '.join(recs['activities'])}")
     print(f"Clothing Suggestion: {recs['clothing']}")
@@ -127,22 +132,38 @@ def main():
         if weather_data is None or not weather_data.get("forecast"):
             print("Weather data processing failed.")
             continue
+        
+        #getting weather for forcaste starting at time of want
+        try:
+            local_now = datetime.now(ZoneInfo(weather_data["timezone"]))
+            current_hour_str = local_now.strftime("%Y-%m-%dT%H:00")
+            for i, entry in enumerate(weather_data["forecast"]):
+                if entry.get("time") == current_hour_str:
+                    start_idx = i
+                    break
+        except Exception:
+            start_idx = 0
+            
+        weather_data["forecast"] = weather_data["forecast"][start_idx:]
 
         #Weather Display Module (Chris)
         weather_data["selected_unit"] = unit
         hourly_report = display_forecast(weather_data)
 
         # Pull first hour values for summary and recommendations
-        first_raw = weather_data["forecast"][0]
-        first_formatted = hourly_report["hourly_forecast"][0]
-
-        temp_c = first_raw["temperature_2m"]
-        rain = first_raw["precipitation_probability"]
-        wind = first_raw["wind_speed_10m"]
+        current_hour = hourly_report["hourly_forecast"][0]
+        rain_prob = current_hour["precipitation_probability"]
+        wind = current_hour["wind_speed"]
+        
+        #making sure that F does not mess up Arifs stuff
+        if unit == "F":
+            temp_c = convert_temperature(current_hour["temperature"], "C")
+        else:
+            temp_c = current_hour["temperature"]
 
         #Recommendation Module (Arif)
-        activities = recommend_activity(temp_c, rain, wind)
-        clothing = recommend_clothing(temp_c, rain, wind)
+        activities = recommend_activity(temp_c, rain_prob, wind)
+        clothing = recommend_clothing(temp_c, rain_prob, wind)
 
         #Combine, display, and save to JSON
         final_data = {
@@ -152,9 +173,13 @@ def main():
             "timezone": weather_data["timezone"],
             "unit": unit,
             "current_summary": {
-                "time": first_formatted["time"],
-                "temperature": first_formatted["temperature"],
-                "precipitation_probability": rain,
+                "time": current_hour["time"],
+                "temperature": current_hour["temperature"],
+                "precipitation_probability": rain_prob,
+                "precipitation": current_hour["precipitation"],
+                "rain": current_hour["rain"],
+                "showers": current_hour["showers"],
+                "snowfall": current_hour["snowfall"],
                 "wind_speed": wind
             },
             "recommendations": {
