@@ -17,11 +17,14 @@ def clean_number(value):
     does: strips letters and otehr characters from input
     returns cleaned number
     """
-    
+    if value is None:
+        return 0.0
     if isinstance(value, (int, float)):
         return float(value)
-    return float(str(value).split()[0])
-
+    try:
+        return float(str(value).split()[0])
+    except (ValueError, IndexError):
+        return 0.0
 def convert_temperature(value, unit):
     """
     Function: convert_temperature(value, unit)

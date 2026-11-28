@@ -11,7 +11,8 @@
 #save_json(path, data) – Writes a JSON file to save data and show it to the user. Returns: None
 
 #test function also needed
-
+import io
+import contextlib
 import requests
 import os
 import json
@@ -84,7 +85,7 @@ def save_json(path, data):
         with open(path, "w",  encoding="utf-8") as file:
             json.dump(data, file, indent=2)
         print(f"\nResults saved to {path}:")
-        print(json.dumps(data, indent=2))
+        #print(json.dumps(data, indent=2))
     #kinda unecessary but I like to have error checking
     except Exception as e:
         print(f"Error saving JSON to {path}: {e}")
@@ -198,8 +199,77 @@ def main():
             print("Exiting WetterPlan.")
             break
 
+#test function
+
+def run_tests():
+    """
+    Function: run_tests()
+    Does: Runs 14 offline assert tests silently without cluttering the terminal.
+    Returns: None
+    """
+    #silence so things don't print
+    # if not you would see an error due to me on purposely setting one off
+    with contextlib.redirect_stdout(io.StringIO()):
+        # testing Temperature conversion 
+        #Assert function(num, Which one) == float if fail prints string
+        assert convert_temperature(0, "F") == 32.0, "0°C should be 32.0°F"
+        assert convert_temperature(100, "F") == 212.0, "100°C should be 212.0°F"
+        assert convert_temperature(32, "C") == 0.0, "32°F should be 0.0°C"
+        assert convert_temperature("36.5 °F", "C") == 2.5, "Should parse unit string and convert to 2.5°C"
+
+        # testing Weather API JSON processing tests
+        sample_raw_api = {
+            "latitude": 50.08,
+            "longitude": 8.24,
+            "timezone": "Europe/Berlin",
+            "hourly_units": {
+                "temperature_2m": "°C",
+                "precipitation_probability": "%",
+                "precipitation": "mm",
+                "rain": "mm",
+                "showers": "mm",
+                "snowfall": "cm",
+                "wind_speed_10m": "km/h"
+            },
+            "hourly": {
+                "time": ["2026-11-27T12:00"],
+                "temperature_2m": [10.0],
+                "precipitation_probability": [0 + 0],
+                "precipitation": [0.0],
+                "rain": [0.0],
+                "showers": [0.0],
+                "snowfall": [0.0],
+                "wind_speed_10m": [12.0]
+            }
+        }
+        processed = process_weather_data(sample_raw_api, "Mainz")
+        assert processed is not None and processed["city"] == "Mainz", "Should parse valid API dict"
+        assert process_weather_data({"bad_key": 123}, "Mainz") is None, "Missing 'hourly' key should return None"
+
+        # Testing Forecast formatting tests 
+        processed["selected_unit"] = "F"
+        report = display_forecast(processed)
+        assert len(report["hourly_forecast"]) == 1, "Should contain 1 formatted hourly record"
+        assert report["hourly_forecast"][-1]["temperature"] == 50.0, "10.0°C should format as 50.0°F"
+
+        # Testing Recommendation logic tests
+        assert "Visit a museum" in recommend_activity(-5, 0, 10), "Freezing temp should suggest indoor museum"
+        assert "Go cycling" not in recommend_activity(22, 0, 35), "High wind (35 km/h) should filter out cycling"
+        assert "umbrella" in recommend_clothing(12, 80, 10).lower(), "80% rain should suggest an umbrella"
+        assert "sunscreen" in recommend_clothing(28, 0, 5).lower(), "28°C should suggest sunscreen and sunglasses"
+
+        #Testing JSON file writing & verification tests
+        test_file = "test_output.json"
+        save_json(test_file, {"status": "ok", "temp": 50.0})
+        assert os.path.exists(test_file), "JSON output file should exist on disk"
+        with open(test_file, "r", encoding="utf-8") as f:
+            loaded = json.load(f)
+        assert loaded["status"] == "ok", "Saved JSON content should match input dictionary"
+        os.remove(test_file)
+    print ("All 14 assert tests passed!")
+
 #main guard
 if __name__ == "__main__":
+    run_tests()
     main()
-    print("temphold")
 

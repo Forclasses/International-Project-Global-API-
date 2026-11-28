@@ -13,7 +13,8 @@ Nessary files:
 
 
 Setup:
-
+Need to run:
+    pip install requests tzdata
 
 
 Other:
