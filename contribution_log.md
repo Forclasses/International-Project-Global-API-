@@ -150,13 +150,18 @@ This file tracks individual contributions, time spent, and links to verified rep
 
 ## Week 6
 ### 👤 Christopher Edward Bruce
-* **Time Spent:** 4 hours so far
+* **Time Spent:** 6 hours 30 mintues
 * **Tasks Completed:**
   * Created a preliminary push that combines the group's efforts so far 
-  * 
+  * Muitable meetings
+  * Did the recording for D4
+  * Made the Main, and Weather Display.
 * **Artifact / Commit Links:**
   * https://github.com/Forclasses/International-Project-Global-API-/tree/Prelimarypush
-  * 
+  * See black board
+  * Did not take meeting notes online
+  * https://github.com/Forclasses/International-Project-Global-API-/blob/Prelimarypush/main.py
+  * https://github.com/Forclasses/International-Project-Global-API-/blob/Prelimarypush/weather_display.py
 
 
 ### 👤 Arif Emre Güzel
@@ -174,5 +179,3 @@ This file tracks individual contributions, time spent, and links to verified rep
   * 
 * **Artifact / Commit Links:**
   * https://github.com/Forclasses/International-Project-Global-API-/blob/Testing-weather-API-output/scriptweatherlocationalex(updated.26.11).py
-
-
