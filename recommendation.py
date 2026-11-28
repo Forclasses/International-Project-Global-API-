@@ -1,4 +1,5 @@
-#by Arif
+#By: Arif Emre Güzel
+
 def recommend_activity(temp_c, rain, wind):
     """
     Function: recommend_activity(temp_c, rain, wind)
@@ -8,7 +9,7 @@ def recommend_activity(temp_c, rain, wind):
 
     activities = []
 
-    # 1. Temperature analysis
+    # Temperature analysis
 
     if temp_c < 0:
         activities = [
@@ -74,7 +75,7 @@ def recommend_activity(temp_c, rain, wind):
             "Relax in an air-conditioned place"
         ]
 
-    # 2. Rain probability analysis
+    # Rain probability analysis
 
     if rain >= 70:
         activities = [
@@ -93,7 +94,7 @@ def recommend_activity(temp_c, rain, wind):
     elif rain >= 20:
         activities.append("Visit a covered market")
 
-    # 3. Wind speed analysis
+    # Wind speed analysis
 
     if wind >= 40:
         activities = [

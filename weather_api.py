@@ -1,11 +1,12 @@
-#taking Alex Rough draft
+#By: Alexander Felix Kirsten
+
 import requests
 import os
 import json
 import time
 
 
-# ==================== Location Module ====================
+# Location Functions
 def search_location(city):
     """
     Function: search_location(city) 
@@ -92,10 +93,8 @@ def get_coordinates(city):
     except ValueError as e:
         print(f"Error decoding coordinates JSON response: {e}")
         return None
-# ==================== Location Module ====================
 
-
-# ==================== Weather API Module ====================
+# Weather API Functions
 def get_weather(latitude, longitude):
     """
     Function: get_weather(latitude, longitude) 

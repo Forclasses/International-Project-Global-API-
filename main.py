@@ -1,6 +1,8 @@
-#starter code for project
-#add your needed import files
-
+# Group 1 Wetter Plan
+# CMIS 130
+# Christopher Bruce
+# Arif Emre Güzel
+# Alexander Felix Kirsten
 
 #Functions for this file
 #main() – Starts the application. Returns None
@@ -11,6 +13,9 @@
 #save_json(path, data) – Writes a JSON file to save data and show it to the user. Returns: None
 
 #test function also needed
+#got added
+
+#This is by: Christopher Bruce
 import io
 import contextlib
 import requests
@@ -19,6 +24,7 @@ import json
 import time
 from datetime import datetime
 from zoneinfo import ZoneInfo
+#taking functions
 from weather_api import (
     search_location,
     get_coordinates,
@@ -105,6 +111,7 @@ def main():
             print("\nExcessive requests detected. Cooling down for 10 seconds...")
             time.sleep(10)
             request_count = 0
+        print("\n================ WetterPlan ================")
         #getting user data
         user_input = handle_user_input()
         city = user_input["city"]
