@@ -22,18 +22,18 @@ Note: Running the program will automatically generate `ForUser.json` in the same
 
 
 Setup:
-1. Ensure **Python 3.9 or higher** is installed.
+1. Ensure Python 3.9 or higher is installed.
 2. Open a terminal in the project folder and install the required packages:
-   ```bash
+   
    pip install requests tzdata
-   ```
-   *(If `pip` is not recognized on Windows, run `python -m pip install requests tzdata`.)*
+   
+   (If `pip` is not recognized on Windows, run `python -m pip install requests tzdata`.)
 
 How to Run:
 Start the application from the project directory:
-```bash
+
 python main.py
-```
+
 
 Testing and Usage
 - Built-in Tests: When `main.py` starts, it automatically runs 14 offline `assert` tests to verify temperature conversion, JSON parsing,
